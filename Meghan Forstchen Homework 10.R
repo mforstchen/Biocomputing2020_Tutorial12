@@ -3,9 +3,24 @@
 #Load the ggplot library
 library(ggplot2)
 
-#Set working directory
-setwd("~/Desktop/Biocomputing2020_Tutorial12-main/")
+#Set the working directory to where files are saved
+setwd("~/Desktop/Biocomputing2020_Tutorial12-main")
 
+#Question 1
+#Load in the dataset, I am using the "cars" dataset from R
+#This data looks at the distance cars took to stop after going a certain speed (mph)
+#This can be viewed through data("cars")
+
+#Read in the dataset that I have saved
+cars = read.csv("Cars.csv", header=TRUE, stringsAsFactors=FALSE)
+
+#Plot comparing stopping distance based on speed of car
+ggplot(data = cars, aes(x = speed, y = dist)) + 
+  geom_point() +
+  stat_smooth(method="lm") + 
+  xlab("speed (mph)") +
+  ylab("stopping distance (ft)") + 
+  theme_classic()
 
 #Question 2
 #Read in the data.txt file
@@ -24,6 +39,7 @@ ggplot(data = data,aes(x = region, y = observations, color=region)) +
   xlab("Region") + 
   ylab("Observations") + 
   theme_classic()
+
 
 #Compare the barplot and the scatterplot:
 #The bar plot presents the data with the mean with all bars looking to be pretty similar with
