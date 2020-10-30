@@ -25,3 +25,7 @@ ggplot(data = data,aes(x = region, y = observations, color=region)) +
   ylab("Observations") + 
   theme_classic()
 
+#Compare the barplot and the scatterplot:
+#The bar plot presents the data with the mean with all bars looking to be pretty similar with
+#a mean around 15 observations. However, the scatterplot shows that while each of the regions
+#may have a similar mean the distributions of the data points differ quite a bit by region.
